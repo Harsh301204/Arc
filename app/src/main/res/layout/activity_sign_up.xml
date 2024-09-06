@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#519A07"
+    android:background="#31a667"
     tools:context=".SignUp">
 
     <androidx.constraintlayout.widget.Guideline
@@ -90,7 +90,7 @@
             android:layout_marginTop="70dp"
             android:layout_marginEnd="30dp"
             android:background="@color/black"
-            android:backgroundTint="#AD38E608"
+            android:backgroundTint="#D73EC66C"
             android:ems="10"
             android:inputType="textPersonName"
             android:padding="10dp" />
@@ -114,7 +114,8 @@
             android:layout_marginTop="170dp"
             android:layout_marginEnd="30dp"
             android:background="@color/black"
-            android:backgroundTint="#AD38E608"
+            android:backgroundTint="#D73EC66C"
+            android:drawableLeft="@drawable/email"
             android:ems="10"
             android:inputType="textEmailAddress"
             android:padding="10dp" />
@@ -143,7 +144,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:background="@color/black"
-                android:backgroundTint="#AD38E608"
+                android:backgroundTint="#D73EC66C"
                 android:ems="10"
                 android:inputType="textPassword"
                 android:padding="10dp" />
@@ -174,7 +175,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:background="@color/black"
-                android:backgroundTint="#AD38E608"
+                android:backgroundTint="#D73EC66C"
                 android:ems="10"
                 android:inputType="textPassword"
                 android:padding="10dp" />
@@ -189,7 +190,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="470dp"
             android:layout_marginEnd="30dp"
-            android:backgroundTint="#519A07"
+            android:backgroundTint="#31a667"
             android:text="SIGN UP"
             android:textColor="@color/white"
             android:textSize="25sp" />
