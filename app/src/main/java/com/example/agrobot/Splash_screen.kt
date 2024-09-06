@@ -26,7 +26,7 @@ class Splash_screen : AppCompatActivity() {
         val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         backgroundImage.startAnimation(slideAnimation)
         Handler().postDelayed({
-            val intent= Intent(this,MainActivity::class.java)
+            val intent= Intent(this,LoginActivity::class.java)
             startActivity(intent)
             this.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             finish()
