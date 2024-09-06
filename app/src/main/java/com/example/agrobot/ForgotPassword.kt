@@ -1,4 +1,4 @@
-package com.example.foodordering
+package com.example.agrobot
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
