@@ -41,9 +41,7 @@ android {
 
     dependencies {
 
-        implementation (libs.glide)
-        annotationProcessor (libs.compiler)
-        implementation(libs.firebase.bom)
+        implementation(platform(libs.firebase.bom))
         implementation(libs.retrofit)
         implementation(libs.squareup.converter.gson)
         implementation(libs.logging.interceptor)
@@ -75,7 +73,6 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.database)
-    implementation(libs.androidx.ui.text.android)
     implementation(libs.play.services.location)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

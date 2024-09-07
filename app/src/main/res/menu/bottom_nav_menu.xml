@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/video"
+        android:icon="@drawable/baseline_ondemand_video_24"
+        android:title="@string/live" />
+
+    <item
+        android:id="@+id/gemini"
+        android:icon="@drawable/gemini"
+        android:title="@string/chatbot" />
+
+    <item
+        android:id="@+id/website"
+        android:icon="@drawable/baseline_open_in_browser_24"
+        android:title="@string/website"/>
+
+</menu>

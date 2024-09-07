@@ -69,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.46" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/verticalGuideline1"
@@ -174,7 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.08" />
+            app:layout_constraintGuide_percent="0.1" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/_verticalGuideline1"
@@ -195,7 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.45" />
+            app:layout_constraintGuide_percent="0.5" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/_midVerticalGuideline1"
@@ -217,7 +217,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Weather"
-            android:textSize="13dp"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/_verticalGuideline3"
             app:layout_constraintStart_toStartOf="@+id/_midVerticalGuideline2"
@@ -353,53 +353,6 @@
         android:layout_height="3dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@id/cl2"/>
-    <ImageButton
-        android:id="@+id/imageButtonHome"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#BA50ED98"
-        android:paddingBottom="20dp"
-        android:src="@drawable/baseline_home_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/midVerticalGuideline1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/midHorizontalGuideline0" />
-
-    <ImageButton
-        android:id="@+id/imageButtonVideo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#2DAA68"
-        android:paddingBottom="20dp"
-        android:src="@drawable/baseline_ondemand_video_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2"
-        app:layout_constraintStart_toStartOf="@+id/midVerticalGuideline1"
-        app:layout_constraintTop_toTopOf="@+id/midHorizontalGuideline0" />
-
-    <ImageButton
-        android:id="@+id/imageButtonGemini"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#2DAA68"
-        android:paddingBottom="15dp"
-        android:src="@drawable/gemini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/_verticalGuideline4"
-        app:layout_constraintStart_toStartOf="@+id/verticalGuideline2"
-        app:layout_constraintTop_toTopOf="@+id/midHorizontalGuideline0" />
-
-    <ImageButton
-        android:id="@+id/imageButtonBrowser"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#2DAA68"
-        android:paddingBottom="20dp"
-        android:src="@drawable/baseline_open_in_browser_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/_verticalGuideline4"
-        app:layout_constraintTop_toTopOf="@+id/midHorizontalGuideline0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl2"
@@ -407,7 +360,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="2dp"
         android:background="#BC68A0F8"
-        app:layout_constraintBottom_toTopOf="@+id/midHorizontalGuideline0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -449,6 +402,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView_comment" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
