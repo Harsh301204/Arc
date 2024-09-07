@@ -9,48 +9,60 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agrobot.MainActivity
 import com.example.agrobot.R
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.database
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var email: String
+    private lateinit var password: String
+    private lateinit var database: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
+        auth = Firebase.auth
+        database = Firebase.database.reference
         val signUpButton = findViewById<TextView>(R.id.sign_up_btn)
         signUpButton.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
+            finish()
         }
-
-        val forgotPasswordButton = findViewById<TextView>(R.id.forgotPasswordTextView)
-        forgotPasswordButton.setOnClickListener {
+        val forgotPassword = findViewById<TextView>(R.id.forgotPasswordTextView)
+        forgotPassword.setOnClickListener {
             val intent = Intent(this, ForgotPassword::class.java)
             startActivity(intent)
+            finish()
         }
-
-        auth = FirebaseAuth.getInstance()
         val loginButton = findViewById<TextView>(R.id.log_in_btn)
         loginButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-//            val email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
-//            val password = findViewById<EditText>(R.id.editTextTextPassword).text.toString()
-//            if(email.isNotEmpty() && password.isNotEmpty()){
-//                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-//                    if (it.isSuccessful) {
-//                        val intent = Intent(this, MainActivity::class.java)
-//                        startActivity(intent)
-//                    } else {
-//                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//            }else {
-//                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-//            }
+            email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
+            password = findViewById<EditText>(R.id.editTextTextPassword).text.toString()
+            if(email.isBlank()||password.isBlank()){
+                Toast.makeText(this,"Please fill all details",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                auth.signInWithEmailAndPassword(email,password).addOnCompleteListener{task->
+                    if(task.isSuccessful){
+                        val user=auth.currentUser
+                        updateUi(user)
+                    }
+                    else{
+                        Toast.makeText(this,"Authentication failed",Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
         }
+    }
 
-
+    private fun updateUi(user: FirebaseUser?) {
+        startActivity(Intent(this, MainActivity::class.java))
     }
 }
