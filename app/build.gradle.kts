@@ -40,6 +40,7 @@ android {
 
 
     dependencies {
+        implementation(libs.firebase.bom)
         implementation(libs.retrofit)
         implementation(libs.squareup.converter.gson)
         implementation(libs.logging.interceptor)
@@ -64,4 +65,11 @@ android {
         androidTestImplementation(libs.androidx.junit)
         androidTestImplementation(libs.androidx.espresso.core)
     }
+}
+dependencies {
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.database)
 }

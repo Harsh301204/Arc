@@ -10,17 +10,101 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agrobot.ui.WeatherApiService
 import com.example.agrobot.ui.WeatherData
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.collections.getValue
+
 class MainActivity : AppCompatActivity() {
+    private lateinit var database: DatabaseReference
+    private lateinit var database1: DatabaseReference
+    private lateinit var database2: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_services)
+
+        database= FirebaseDatabase.getInstance().getReference("moisture")
+        database1= FirebaseDatabase.getInstance().getReference("temperature")
+        database2= FirebaseDatabase.getInstance().getReference("humidity")
+
+
+        database.get()
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val value = dataSnapshot.value.toString()
+                    val progress=findViewById<ProgressBar>(R.id.progressBar)
+                    val soilMoisture=findViewById<TextView>(R.id.textView_soilMoistureData)
+                    soilMoisture.text= value
+                    progress.progress= value?.toInt()!!
+                    val comment=findViewById<TextView>(R.id.textView_comment)
+                    val green=progress.progress*255/100.0
+                    val red=255-green
+                    val commentText=findViewById<TextView>(R.id.textView_commentText)
+                    when (progress.progress) {
+                        in 16..60 -> {
+                            comment.text="${progress.progress}\nAVERAGE"
+                            commentText.text="The soil moisture level is moderate, but regular monitoring is recommended to ensure optimal irrigation.\nKeep an eye on the readings to avoid over or under-watering."
+                            comment.setTextColor(Color.rgb(red.toInt(),green.toInt(),0))
+                        }
+                        in 0..15-> {
+                            comment.text = "${progress.progress}\nBAD"
+                            comment.setTextColor(Color.rgb(red.toInt(),green.toInt(),0))
+                            commentText.text =
+                                "Warning: The soil moisture level is very low.\nImmediate action is required to prevent crop stress.\nAdjust your irrigation settings to restore balance."
+                        }
+                        else -> {
+                            comment.text="${progress.progress}\nGOOD"
+                            commentText.text="The soil moisture level is ideal for plant growth. No immediate irrigation is required.\nMaintain the current watering schedule to sustain healthy soil conditions."
+                            comment.setTextColor(Color.rgb(red.toInt(),green.toInt(),0))
+                        }
+                    }
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+                    Log.w("a", "Failed to read value.", error.toException())
+                }
+            })
+            database1.get()
+            database1.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val value = dataSnapshot.value.toString()
+                    val data = findViewById<TextView>(R.id.textView_temperatureData)
+                    data.text = value
+
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+                    Log.w("a", "Failed to read value.", error.toException())
+                }
+            })
+
+    database2.get()
+            database2.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val value = dataSnapshot.value.toString()
+                    val data = findViewById<TextView>(R.id.textView_humidityData)
+                    data.text = value
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+                    Log.w("a", "Failed to read value.", error.toException())
+                }
+            })
+
+
+
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org/data/2.5/")
@@ -38,8 +122,6 @@ class MainActivity : AppCompatActivity() {
                     val tempData = weatherData?.main?.temp
                     val weatherDescription = weatherData?.weather?.get(0)?.description
                     val weatherIcon = weatherData?.weather?.get(0)?.icon.toString()
-                    val textTempData = findViewById<TextView>(R.id.textView_temperatureData)
-                    textTempData.text = tempData.toString()
                     val textWeatherData = findViewById<TextView>(R.id.textView_weatherData)
                     textWeatherData.text = weatherDescription.toString()
                     val weatherIconImageView : ImageView = findViewById(R.id.imageViewWeatherIcon)
@@ -64,28 +146,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e("Weather", "Error: ${response.code()} - ${response.message()}")
                     // Handle error
                 }
-                val progress=findViewById<ProgressBar>(R.id.progressBar)
-                progress.progress=15
-                val comment=findViewById<TextView>(R.id.textView_comment)
-                val commentText=findViewById<TextView>(R.id.textView_commentText)
-                when (progress.progress) {
-                    in 16..60 -> {
-                        comment.text="AVERAGE"
-                        commentText.text="The soil moisture level is moderate, but regular monitoring is recommended to ensure optimal irrigation.\nKeep an eye on the readings to avoid over or under-watering."
-                        comment.setTextColor(Color.rgb(200,200,0))
-                    }
-                    in 0..15-> {
-                        comment.text = "BAD"
-                        comment.setTextColor(Color.rgb(200, 0, 0))
-                        commentText.text =
-                            "Warning: The soil moisture level is very low.\nImmediate action is required to prevent crop stress.\nAdjust your irrigation settings to restore balance."
-                    }
-                    else -> {
-                        comment.text="GOOD"
-                        commentText.text="The soil moisture level is ideal for plant growth. No immediate irrigation is required.\nMaintain the current watering schedule to sustain healthy soil conditions."
-                        comment.setTextColor(Color.rgb(0,200,0))
-                    }
-                }
+
             }
 
             override fun onFailure(call: Call<WeatherData>, t: Throwable) {

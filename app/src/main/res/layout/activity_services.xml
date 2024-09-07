@@ -262,7 +262,7 @@
             android:id="@+id/textView_soilMoistureData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text=""
             app:layout_constraintBottom_toTopOf="@+id/_horizontalGuideline3"
             app:layout_constraintEnd_toStartOf="@+id/_verticalGuidelineMid"
             app:layout_constraintStart_toStartOf="@+id/_verticalGuideline1"
@@ -356,8 +356,8 @@
     <ImageButton
         android:id="@+id/imageButtonHome"
         android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="#2DAA68"
+        android:layout_height="0dp"
+        android:background="#BA50ED98"
         android:paddingBottom="20dp"
         android:src="@drawable/baseline_home_24"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -368,7 +368,7 @@
     <ImageButton
         android:id="@+id/imageButtonVideo"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
         android:background="#2DAA68"
         android:paddingBottom="20dp"
         android:src="@drawable/baseline_ondemand_video_24"
@@ -380,7 +380,7 @@
     <ImageButton
         android:id="@+id/imageButtonGemini"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
         android:background="#2DAA68"
         android:paddingBottom="15dp"
         android:src="@drawable/gemini"
@@ -392,7 +392,7 @@
     <ImageButton
         android:id="@+id/imageButtonBrowser"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
         android:background="#2DAA68"
         android:paddingBottom="20dp"
         android:src="@drawable/baseline_open_in_browser_24"
@@ -405,13 +405,12 @@
         android:id="@+id/cl2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
         android:background="#BC68A0F8"
         app:layout_constraintBottom_toTopOf="@+id/midHorizontalGuideline0"
-        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline3"
-        app:layout_constraintStart_toStartOf="@+id/verticalGuideline1"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        >
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -432,7 +431,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/adlam_display"
             android:paddingTop="10dp"
-            android:text="A"
+            android:text=""
+            android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="@+id/progressBar"
             app:layout_constraintStart_toStartOf="@+id/progressBar"

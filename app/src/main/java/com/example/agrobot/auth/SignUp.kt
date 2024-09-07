@@ -21,15 +21,14 @@ class SignUp : AppCompatActivity() {
         val signUp=findViewById<Button>(R.id.sign_up_btn)
 
         signUp.setOnClickListener {
-            val email=findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
-            val name=findViewById<EditText>(R .id.editTextName).text.toString()
-            val password=findViewById<EditText>(R.id.editTextPassword).text.toString()
+            val username=findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
+            val Password=findViewById<EditText>(R.id.editTextPassword).text.toString()
             val repeatPassword=findViewById<EditText>(R.id.editTextReenterPassword).text.toString()
-            if (password == repeatPassword) {
+            if (Password == repeatPassword) {
                 // Passwords match, proceed with registration
                 database=FirebaseDatabase.getInstance().getReference("users")
-                val user = Users(name, email, password)
-                database.child(email).child("data").setValue(user)
+                val user = Users(username,Password)
+                database.child(username).setValue(Password)
                     .addOnSuccessListener {
                         Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show()
                     }
