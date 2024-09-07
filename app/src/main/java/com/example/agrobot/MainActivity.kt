@@ -14,7 +14,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.bumptech.glide.Glide
 import com.example.agrobot.ui.WeatherApiService
 import com.example.agrobot.ui.WeatherData
 import com.google.android.gms.location.FusedLocationProviderClient
