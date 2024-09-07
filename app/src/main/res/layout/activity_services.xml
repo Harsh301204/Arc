@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontalGuideline1"
@@ -12,6 +12,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/_verticalGuideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontalGuideline2"
@@ -318,6 +325,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/imageViewWeatherIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/weather_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/_midVerticalGuideline2"
+            app:layout_constraintStart_toStartOf="@+id/_verticalGuidelineMid"
+            app:layout_constraintTop_toTopOf="@+id/_horizontalGuidelinemid" />
+
+        <ImageView
             android:id="@+id/imageView3"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -328,4 +345,48 @@
             app:layout_constraintTop_toTopOf="@+id/_horizontalGuidelinemid" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/imageButtonHome"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:paddingBottom="20dp"
+        android:background="@null"
+        android:src="@drawable/baseline_home_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/midVerticalGuideline1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonVideo"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:paddingBottom="20dp"
+        android:background="@null"
+        android:src="@drawable/baseline_ondemand_video_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2"
+        app:layout_constraintStart_toStartOf="@+id/midVerticalGuideline1" />
+
+    <ImageButton
+        android:id="@+id/imageButtonGemini"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:paddingBottom="20dp"
+        android:background="@null"
+        android:src="@drawable/gemini1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/_verticalGuideline4"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline2" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBrowser"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:paddingBottom="20dp"
+        android:background="@null"
+        android:src="@drawable/baseline_open_in_browser_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/_verticalGuideline4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
