@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "810000919945",
+    "project_id": "agrobot-3272c",
+    "storage_bucket": "agrobot-3272c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810000919945:android:412ef15d9c97b3dd238558",
+        "android_client_info": {
+          "package_name": "com.example.agrobot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmcBADB1nQeq9uDSIfvZdx8YMla23jpCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,5 @@
 package com.example.agrobot
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -9,6 +8,8 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.agrobot.auth.LoginActivity
+
 @Suppress("DEPRECATION")
 class Splash_screen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +27,7 @@ class Splash_screen : AppCompatActivity() {
         val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         backgroundImage.startAnimation(slideAnimation)
         Handler().postDelayed({
-            val intent= Intent(this,LoginActivity::class.java)
+            val intent= Intent(this, LoginActivity::class.java)
             startActivity(intent)
             this.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             finish()
