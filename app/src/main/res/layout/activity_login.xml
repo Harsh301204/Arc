@@ -108,7 +108,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="68dp"
             android:layout_marginTop="180dp"
             app:passwordToggleEnabled="true">
 
@@ -116,9 +116,8 @@
                 android:id="@+id/editTextTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="180dp"
                 android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
                 android:background="@drawable/rounded_corners"
                 android:backgroundTint="#D73EC66C"
                 android:ems="10"

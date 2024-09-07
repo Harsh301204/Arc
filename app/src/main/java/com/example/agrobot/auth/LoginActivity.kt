@@ -33,20 +33,22 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val loginButton = findViewById<TextView>(R.id.log_in_btn)
         loginButton.setOnClickListener {
-            val email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
-            val password = findViewById<EditText>(R.id.editTextTextPassword).text.toString()
-            if(email.isNotEmpty() && password.isNotEmpty()){
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-            }
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+//            val email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
+//            val password = findViewById<EditText>(R.id.editTextTextPassword).text.toString()
+//            if(email.isNotEmpty() && password.isNotEmpty()){
+//                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
+//                    if (it.isSuccessful) {
+//                        val intent = Intent(this, MainActivity::class.java)
+//                        startActivity(intent)
+//                    } else {
+//                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }else {
+//                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+//            }
         }
 
 
