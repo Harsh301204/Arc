@@ -40,6 +40,9 @@ android {
 
 
     dependencies {
+
+        implementation (libs.glide)
+        annotationProcessor (libs.compiler)
         implementation(libs.firebase.bom)
         implementation(libs.retrofit)
         implementation(libs.squareup.converter.gson)
@@ -72,4 +75,6 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.database)
+    implementation(libs.androidx.ui.text.android)
+    implementation(libs.play.services.location)
 }
