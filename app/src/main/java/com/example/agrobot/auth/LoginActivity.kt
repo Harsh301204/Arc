@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.agrobot.FragmentActivity
 import com.example.agrobot.MainActivity
 import com.example.agrobot.R
 import com.google.firebase.auth.FirebaseAuth
@@ -33,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val loginButton = findViewById<TextView>(R.id.log_in_btn)
         loginButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, FragmentActivity::class.java)
             startActivity(intent)
 //            val email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
 //            val password = findViewById<EditText>(R.id.editTextTextPassword).text.toString()

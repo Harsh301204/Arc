@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "810000919945",
-    "project_id": "agrobot-3272c",
-    "storage_bucket": "agrobot-3272c.appspot.com"
+    "project_number": "603687837017",
+    "firebase_url": "https://gardener-8cc2b-default-rtdb.firebaseio.com",
+    "project_id": "gardener-8cc2b",
+    "storage_bucket": "gardener-8cc2b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:810000919945:android:412ef15d9c97b3dd238558",
+        "mobilesdk_app_id": "1:603687837017:android:7e69f89229a316f8314048",
         "android_client_info": {
           "package_name": "com.example.agrobot"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBmcBADB1nQeq9uDSIfvZdx8YMla23jpCo"
+          "current_key": "AIzaSyCkLzlBnDXOw3QZ05xxBSvnz32MjLyO4YM"
         }
       ],
       "services": {
