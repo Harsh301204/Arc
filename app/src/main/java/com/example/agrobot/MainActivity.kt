@@ -1,8 +1,10 @@
 package com.example.agrobot
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +16,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,11 +64,32 @@ class MainActivity : AppCompatActivity() {
                     Log.e("Weather", "Error: ${response.code()} - ${response.message()}")
                     // Handle error
                 }
+                val progress=findViewById<ProgressBar>(R.id.progressBar)
+                progress.progress=15
+                val comment=findViewById<TextView>(R.id.textView_comment)
+                val commentText=findViewById<TextView>(R.id.textView_commentText)
+                when (progress.progress) {
+                    in 16..60 -> {
+                        comment.text="AVERAGE"
+                        commentText.text="The soil moisture level is moderate, but regular monitoring is recommended to ensure optimal irrigation.\nKeep an eye on the readings to avoid over or under-watering."
+                        comment.setTextColor(Color.rgb(200,200,0))
+                    }
+                    in 0..15-> {
+                        comment.text = "BAD"
+                        comment.setTextColor(Color.rgb(200, 0, 0))
+                        commentText.text =
+                            "Warning: The soil moisture level is very low.\nImmediate action is required to prevent crop stress.\nAdjust your irrigation settings to restore balance."
+                    }
+                    else -> {
+                        comment.text="GOOD"
+                        commentText.text="The soil moisture level is ideal for plant growth. No immediate irrigation is required.\nMaintain the current watering schedule to sustain healthy soil conditions."
+                        comment.setTextColor(Color.rgb(0,200,0))
+                    }
+                }
             }
 
             override fun onFailure(call: Call<WeatherData>, t: Throwable) {
                 Log.e("Weather", "Error: ${t.message}")
-                // Handle error
             }
         })
     }
