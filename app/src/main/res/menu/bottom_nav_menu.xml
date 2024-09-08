@@ -17,8 +17,8 @@
         android:title="@string/chatbot" />
 
     <item
-        android:id="@+id/website"
-        android:icon="@drawable/baseline_open_in_browser_24"
-        android:title="@string/website"/>
+        android:id="@+id/our_team"
+        android:icon="@drawable/baseline_groups_24"
+        android:title="@string/our_team"/>
 
 </menu>
