@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.agrobot.FragmentActivity
 import com.example.agrobot.MainActivity
 import com.example.agrobot.R
 import com.google.firebase.Firebase
@@ -63,6 +64,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun updateUi(user: FirebaseUser?) {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, FragmentActivity::class.java))
     }
 }

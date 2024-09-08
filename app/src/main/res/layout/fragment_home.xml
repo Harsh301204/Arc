@@ -221,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Weather"
-                android:textSize="15dp"
+                android:textSize="13dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/_verticalGuideline3"
                 app:layout_constraintStart_toStartOf="@+id/_midVerticalGuideline2"

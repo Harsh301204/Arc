@@ -17,12 +17,8 @@
         android:theme="@style/Theme.Agrobot"
         tools:targetApi="31">
         <activity
-            android:name=".Fragments"
-            android:exported="false"
-            android:label="@string/title_activity_fragments" />
-        <activity
-            android:name=".ControlActivity"
-            android:exported="false" />
+            android:name=".FragmentActivity"
+            android:exported="true"/>
         <activity
             android:name=".auth.SignUp"
             android:exported="true" />
