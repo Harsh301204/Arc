@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2DB637"
+    android:background="#31a667"
     tools:context=".Splash_screen">
 
     <ImageView
@@ -35,7 +35,7 @@
         android:id="@+id/t3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="108dp"
         android:text="From"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -47,7 +47,7 @@
         android:id="@+id/iv2"
         android:layout_width="89dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

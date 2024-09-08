@@ -126,26 +126,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="250dp"
-            android:backgroundTint="@color/black"
-            android:text="Remember me" />
-
-        <TextView
-            android:id="@+id/forgotPasswordTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="250dp"
-            android:layout_marginTop="260dp"
-            android:text="Forgot Password?"
-            android:textColor="#519A07"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
         <Button
             android:id="@+id/log_in_btn"
             android:layout_width="match_parent"

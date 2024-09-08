@@ -199,7 +199,7 @@ class Home : Fragment() {
             in 16..60 -> {
                 comment.text = "$progress\nAVERAGE"
                 commentText.text =
-                    "The soil moisture level is moderate, but regular monitoring is recommended to ensure optimal irrigation.\nKeep an eye on the readings to avoid over or under-watering."
+                    "The soil moisture level is moderate,but regular\nmonitoring is recommended to ensure optimal irrigation.\nKeep an eye on the readings to avoid over or under-watering."
                 comment.setTextColor(Color.rgb(red.toInt(), green.toInt(), 0))
             }
             in 0..15 -> {
@@ -209,7 +209,7 @@ class Home : Fragment() {
             }
             else -> {
                 comment.text = "$progress\nGOOD"
-                commentText.text = "The soil moisture level is ideal for plant growth.\nNo immediate irrigation is required.\nMaintain the current watering schedule to sustain healthy soil conditions."
+                commentText.text = "The soil moisture level is ideal for plant growth.\nNo immediate irrigation is required.\nMaintain the current watering schedule to sustain\nhealthy soil conditions."
                 comment.setTextColor(Color.rgb(red.toInt(), green.toInt(), 0))
             }
         }
