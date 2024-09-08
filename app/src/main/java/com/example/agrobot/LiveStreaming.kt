@@ -1,10 +1,12 @@
 package com.example.agrobot
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.VideoView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,6 +39,13 @@ class LiveStreaming : Fragment() {
         return inflater.inflate(R.layout.fragment_live_streaming, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val videoView: VideoView = view.findViewById(R.id.videoView)
+        val videoUri = Uri.parse("android.resource://com.example.agrobot/" + R.raw.video_farm) // Create a Uri
+        videoView.setVideoURI(videoUri)
+        videoView.start()
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
