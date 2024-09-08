@@ -31,6 +31,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Locale
 import android.Manifest
 import android.location.Location
+import android.widget.Button
+import com.google.firebase.database.values
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,6 +53,8 @@ class Home : Fragment() {
     private lateinit var database: DatabaseReference
     private lateinit var database1: DatabaseReference
     private lateinit var database2: DatabaseReference
+    private val button = FirebaseDatabase.getInstance()
+    private val databaseReference: DatabaseReference = button.getReference("water_motor_status")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +68,6 @@ class Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -77,7 +80,14 @@ class Home : Fragment() {
         database2 = FirebaseDatabase.getInstance().getReference("humidity")
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-
+        val button2=view.findViewById<Button>(R.id.button)
+        button2.setOnClickListener{
+            databaseReference.setValue(true)
+        }
+        val button3=view.findViewById<Button>(R.id.button2)
+        button3.setOnClickListener{
+            databaseReference.setValue(false)
+        }
         // Request location permissions if not granted
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED
@@ -244,8 +254,6 @@ class Home : Fragment() {
     private fun updateWeatherUI(weatherDescription: String?, weatherIcon: String?) {
         view?.findViewById<TextView>(R.id.textView_weatherData)?.text = weatherDescription ?: "N/A"
     }
-
-
     companion object {
         /**
          * Use this factory method to create a new instance of

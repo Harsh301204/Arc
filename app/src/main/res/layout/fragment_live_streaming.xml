@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2" />
+            app:layout_constraintGuide_percent="0.15" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/horizontalGuideline2"
@@ -34,7 +34,7 @@
             android:textSize="25dp"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
-            android:text="Hello User,\nAgroBot Livestreaming"
+            android:text="AgroBot Livestreaming"
             android:background="#2DAA68"
             app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline1"
             app:layout_constraintEnd_toEndOf="parent"

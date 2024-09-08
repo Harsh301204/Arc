@@ -391,38 +391,56 @@
                 app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:radius="20dp"
+                app:cardBackgroundColor="#805BED9F"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:radius="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="#805BED9F"
-                app:layout_constraintTop_toBottomOf="@+id/textView_comment">
+                app:layout_constraintTop_toBottomOf="@+id/textView_comment"
+                app:layout_constraintVertical_bias="0.29000002">
 
                 <TextView
                     android:id="@+id/textView_commentText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text=""
-                    android:textSize="18sp"
-                    android:padding="20dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    />
+                    android:padding="20dp"
+                    android:text=""
+                    android:textSize="18sp" />
             </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IRRIGATE"
                 android:backgroundTint="#00B0FF"
+                android:text="IRRIGATE"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintStart_toStartOf="@+id/cardView2"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                app:layout_constraintVertical_bias="0.794" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                android:backgroundTint="#00B0FF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintHorizontal_bias="0.406"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                app:layout_constraintVertical_bias="0.794" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
