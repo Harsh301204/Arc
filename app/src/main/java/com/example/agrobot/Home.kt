@@ -80,14 +80,14 @@ class Home : Fragment() {
         database2 = FirebaseDatabase.getInstance().getReference("humidity")
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-        val button2=view.findViewById<Button>(R.id.button)
-        button2.setOnClickListener{
-            databaseReference.setValue(true)
-        }
-        val button3=view.findViewById<Button>(R.id.button2)
-        button3.setOnClickListener{
-            databaseReference.setValue(false)
-        }
+//        val button2=view.findViewById<Button>(R.id.button)
+//        button2.setOnClickListener{
+//            databaseReference.setValue(true)
+//        }
+//        val button3=view.findViewById<Button>(R.id.button2)
+//        button3.setOnClickListener{
+//            databaseReference.setValue(false)
+//        }
         // Request location permissions if not granted
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED

@@ -45,6 +45,7 @@
             android:id="@+id/videoView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/horizontalGuideline1"
@@ -87,42 +88,78 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.85" />
 
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/baseline_arrow_circle_left_24"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline3"
                 app:layout_constraintStart_toStartOf="@+id/verticalGuideline1"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/baseline_arrow_circle_up_24"
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:src="@drawable/baseline_arrow_circle_left_24" />
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2"
                 app:layout_constraintStart_toStartOf="@+id/verticalGuideline1"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="20dp">
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:background="@color/white"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/baseline_arrow_circle_up_24"
+                     />
+            </androidx.cardview.widget.CardView>
 
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/baseline_arrow_circle_down_24"
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline3"
                 app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2"
-                app:layout_constraintStart_toStartOf="@+id/verticalGuideline1" />
+                app:layout_constraintStart_toStartOf="@+id/verticalGuideline1">
+                <ImageButton
+                    android:id="@+id/imageButton7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:src="@drawable/baseline_arrow_circle_down_24"
+                    app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline3"
+                    app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2"
+                    app:layout_constraintStart_toStartOf="@+id/verticalGuideline1" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="@id/verticalGuideline2"
+            app:layout_constraintBottom_toTopOf="@id/horizontalGuideline3"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
                 android:id="@+id/imageButton8"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/baseline_arrow_circle_right_24"
-                app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/verticalGuideline2"
-                tools:layout_editor_absoluteX="249dp" />
+                android:background="@color/white"
+                android:src="@drawable/baseline_arrow_circle_right_24" />
+        </androidx.cardview.widget.CardView>
+
 
             <Button
                 android:id="@+id/button3"
